@@ -1,6 +1,5 @@
-FROM java:8
-VOLUME /tmp
-ADD price-calculator-microservice-0.0.1-SNAPSHOT.jar app.jar
-RUN bash -c 'touch /app.jar'
-EXPOSE 8000
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+FROM java:openjdk-8u91-jdk
+MAINTAINER ganeshatmail@gmail.com
+EXPOSE 8060
+CMD java -jar price-calculator-microservice-0.0.1-SNAPSHOT.jar
+ADD build/price-calculator-microservice-0.0.1-SNAPSHOT.jar .
