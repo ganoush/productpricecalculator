@@ -1,0 +1,8 @@
+priceCalculator:
+  image: productpricecalculator/price-calculator-microservice
+  ports:
+    - "8060:8060"
+hystrix:
+  image: productpricecalculator/price-calculator-circuit-breaker
+  ports:
+     - "8080:8080"
